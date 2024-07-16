@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #f48fb1;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: black;
+        }
+        .submit-button {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+        }
+        .submit-button:hover {
+            background-color: #d81b60;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showSuccessMessage() {
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<form onsubmit="showSuccessMessage(); return false;">
+    <h1>Formulário de Cadastro</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" name="idade" required>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="linguagens">Quais linguagens você tem conhecimento?</label>
+    <select id="linguagens" name="linguagens[]" multiple required>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="PYTHON">PYTHON</option>
+        <option value="JAVA">JAVA</option>
+        <option value="JS">JS</option>
+        <option value="PHP">PHP</option>
+        <option value="C#">C#</option>
+        <option value="C++">C++</option>
+    </select>
+
+    <button type="submit" class="submit-button">FINALIZAR</button>
+    <p id="success-message" class="success-message">SEU CADASTRO FOI REGISTRADO!</p>
+</form>
+
+<form action="formulario2.php" method="post" onsubmit="showSuccessMessage(); return false;"></form>
+
+</body>
+</html>
